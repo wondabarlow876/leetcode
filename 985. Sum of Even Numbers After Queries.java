@@ -1,21 +1,24 @@
 // 985. Sum of Even Numbers After Queries
+
 class Solution {
-    public int[] sumEvenAfterQueries(int[] A, int[][] queries) {
-        int S = 0;
-        for (int x: A)
-            if (x % 2 == 0)
-                S += x;
-
-        int[] ans = new int[queries.length];
-
-        for (int i = 0; i < queries.length; ++i) {
-            int val = queries[i][0], index = queries[i][1];
-            if (A[index] % 2 == 0) S -= A[index];
-            A[index] += val;
-            if (A[index] % 2 == 0) S += A[index];
-            ans[i] = S;
+    public boolean canFormArray(int[] arr, int[][] pieces) {
+        int n = arr.length, m = pieces.length;
+        Map<Integer, Integer> index = new HashMap<Integer, Integer>();
+        for (int i = 0; i < m; i++) {
+            index.put(pieces[i][0], i);
         }
-
-        return ans;
+        for (int i = 0; i < n;) {
+            if (!index.containsKey(arr[i])) {
+                return false;
+            }
+            int j = index.get(arr[i]), len = pieces[j].length;
+            for (int k = 0; k < len; k++) {
+                if (arr[i + k] != pieces[j][k]) {
+                    return false;
+                }
+            }
+            i = i + len;
+        }
+        return true;
     }
 }
