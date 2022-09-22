@@ -1,9 +1,7 @@
-// Title:  2.two sum
-// Idea:   Two pointers
-// Complexity: Sort and search with two points O(n) and O(1) space
-// Language:Python
-// Author:  Kaili Yang
-
+// 1.two sum
+// Idea: Two pointers or Hash Table
+// Time Complexity: O(n)
+// Space Complexity: O(n)
 
 public class Solution {
     // example in leetcode book
@@ -21,10 +19,6 @@ public class Solution {
 }
 
 
-// error log
-// 1.;
-// 2.HashMap<>()
-// 3.new int[]{}   
 
  
 
