@@ -1,29 +1,30 @@
-class Solution {
-    private static final int MOD = 1000000007;
-    public int sumSubarrayMins(int[] arr) {
-        if (arr == null || arr.length == 0) {
-            return 0;
-        }
-        int n = arr.length;
-        long ans = 0;
-        // 起点
-        for (int i = 0; i < n; i++) {
-            int min = arr[i];
-            // 终点
-            for (int j = i; j < n; j++) {
-                min = Math.min(min, arr[j]);
-                ans = (ans + min) % MOD;
-            }
-        }
-        return (int)ans;
-    }
-}
+// 会超时
+// class Solution {
+//     private static final int MOD = 1000000007;
+//     public int sumSubarrayMins(int[] arr) {
+//         if (arr == null || arr.length == 0) {
+//             return 0;
+//         }
+//         int n = arr.length;
+//         long ans = 0;
+//         // 起点
+//         for (int i = 0; i < n; i++) {
+//             int min = arr[i];
+//             // 终点
+//             for (int j = i; j < n; j++) {
+//                 min = Math.min(min, arr[j]);
+//                 ans = (ans + min) % MOD;
+//             }
+//         }
+//         return (int)ans;
+//     }
+// }
 
 // 作者：yimeixiaobai
 // 链接：https://leetcode.cn/problems/sum-of-subarray-minimums/solution/xiao-bai-lang-dong-hua-xiang-jie-bao-zhe-489q/
 // 来源：力扣（LeetCode）
 // 著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。
-
+// Solution2
 class Solution {
     private static final int MOD = 1000000007;
     public int sumSubarrayMins(int[] arr) {
@@ -78,23 +79,5 @@ class Solution {
             ans = (ans + (long)(i - left[i]) * (right[i] - i) * arr[i]) % MOD; 
         }
         return (int)ans;
-    }
-}
-
-class Solution {
-    private static final int MOD = 1000000007;
-    public int sumSubarrayMins (int[] arr) {
-        if(arr = null || arr.length = 0){
-            return 0;
-        }
-        int n = arr.length;
-        int[] left = new int[n];
-        int[] right = new int[n];
-        Deque<Integer> stack = new LinkedList<>();
-
-        for (int i = 0; i <n; i++){
-            while (!stack.isEmpty() && arr[])
-        }
-        
     }
 }
